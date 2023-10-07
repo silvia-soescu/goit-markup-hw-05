@@ -32,6 +32,11 @@ body h2 {
     text-align: center;
 }
 
+#current {
+    border-bottom: 3px solid #2196F3;
+    padding-bottom: 23px;
+}
+
 /* header styles */
 
 
@@ -619,4 +624,36 @@ padding-top: 94px;
     cursor: pointer;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2),
             0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+}
+
+.modal {
+    position: fixed;
+    width: 100vw;
+    height: 100hw;
+    top: 221px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    width: 528px;
+    height: 581px;
+    border-radius: 4px;
+}
+
+.close-button {
+    cursor: pointer;
+    position: absolute;
+    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
+            0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+        border-radius: 50%;
+
+
+
+}
+
+.is-hidden {
+    visibility: hidden;
 }
