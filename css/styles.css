@@ -4,6 +4,7 @@
     --paragraph-color: #757575;
     --background-color: #2F303A;
     --buttons-color: #F5F4FA;
+    --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 
@@ -125,12 +126,14 @@ body h2 {
 .contact-email:hover a {
     color: var(--visited-link-color);
     fill: var(--visited-link-color);
+    transition: color var(--transition);
 }
 
 .contact-number:hover svg,
 .contact-number:hover a {
     color: var(--visited-link-color);
         fill: var(--visited-link-color);
+        transition: color var(--transition);
     }
 
 .header-logo span {
@@ -147,7 +150,8 @@ body h2 {
 }
 
 .main-navigation a:hover {
-    color: var(--visited-link-color)
+    color: var(--visited-link-color);
+    transition: color var(--transition);
 }
 
 .main-navigation a:active {
@@ -161,6 +165,7 @@ body h2 {
 
 .contact-links a:hover {
     color: var(--visited-link-color);
+    transition: color var(--transition);
 }
 
 .contact-links a:active {
@@ -217,6 +222,8 @@ body h2 {
     color: #fff;
     background-color: #188CE8;
     font-style: inherit;
+    transition: background-color var(--transition),
+        color var(--transition), border var(--transition);
 }
 
 /* what we do styles */
@@ -275,6 +282,35 @@ body h2 {
     padding-bottom: 94px;
     margin: 0;
     padding-left: 0;
+}
+
+.what-we-do-parent {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background-color: #fff;
+        }
+
+.label-child {
+    color: #fff;
+    background-color: #2F303A;
+    opacity: 80%;
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 3%;
+
+}
+    
+.what-we-do-parent>.label-child {
+        position: absolute;
+        bottom: 0;
+        margin-bottom: 4px;
 }
 
 /* our team styles */
@@ -368,6 +404,8 @@ margin: 0 auto;
     background-color: #188CE8;
     padding: 10px;
     border-radius: 50%;
+    transition: background-color var(--transition),
+        color var(--transition);
 }
 
 .customers-section {
@@ -404,6 +442,8 @@ padding-top: 94px;
 .customer-item:hover svg {
     fill: var(--visited-link-color);
     border: 1px solid var(--visited-link-color);
+    transition: background-color var(--transition),
+        color var(--transition);
 }
 /* footer styles */
 
@@ -455,6 +495,8 @@ padding-top: 94px;
 
 .footer-address a:hover {
     color: var(--visited-link-color);
+    transition: background-color var(--transition),
+        color var(--transition);
 }
 
 .footer-social-links {
@@ -503,6 +545,8 @@ padding-top: 94px;
     background-color: var(--visited-link-color);
     padding: 10px;
     border-radius: 50%;
+    transition: background-color var(--transition),
+        color var(--transition);
 }
 
 /* Portofolie Buttons */
@@ -553,6 +597,8 @@ padding-top: 94px;
     cursor: pointer;
     box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.2),
             0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    transition: background-color var(--transition),
+        color var(--transition);
     }
 
 
@@ -564,6 +610,8 @@ padding-top: 94px;
 .portofolio-buttons button:focus {
     color: #fff;
     background-color: var(--visited-link-color);
+    transition: background-color var(--transition),
+        color var(--transition), border var(var(--transition))
     }
 
 .portofolio-content {
@@ -591,9 +639,41 @@ padding-top: 94px;
 }
 
 .portofolio-images {
-    display: block;
-    max-width: 100%;
-    height: auto;
+    width: 370px;
+    height: 294px;
+    display: block
+    
+}
+
+.portofolio-parent {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-transition {
+position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    background-color: var(--visited-link-color);
+    transform: translatey(100%);
+        transition: transform 250ms ease-in-out;
+}
+
+.portofolio-parent:hover .card-transition {
+    transform: translateY(0);
+}
+
+.card-transition p {
+    color: #fff;
+    padding: 60px 24px 91px 24px;
+    margin: 0 auto;
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
 }
 
 .portofolio-item {
@@ -608,15 +688,18 @@ padding-top: 94px;
     line-height: 225%;
     padding-top: 20px;
     padding-left: 24px;
+    margin: 0 auto;
 }
 
-.portofolio-list p {
+.portofolio-list span {
+    display: block;
     font-size: 16px;
     font-weight: 400;
     line-height: 187.5%;
     color: var(--paragraph-color);
-    padding-bottom: 20px;
+    padding-bottom: 25px;
     padding-left: 24px;
+    margin: 0 auto;
 }
 
 .portofolio-cards:focus,
@@ -624,36 +707,57 @@ padding-top: 94px;
     cursor: pointer;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.2),
             0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
+    transition: background-color var(--transition) ,color var(--transition), border var(--transition);
 }
 
 .modal {
     position: fixed;
     width: 100vw;
-    height: 100hw;
-    top: 221px;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color:rgba(0, 0, 0, 0.2);
     display: flex;
-    justify-content: center;
-    align-items: center;
+        justify-content: center;
+        align-items: center;
 }
 
 .modal-content {
     background-color: #fff;
+    color: #fff;
     width: 528px;
     height: 581px;
     border-radius: 4px;
-}
+    animation-name: animatetop;
+    animation-duration: 1s;
+    }
+
+        @keyframes animatetop {
+            from {
+                top: -100px;
+                opacity: 0
+            }
+    
+            to {
+                top: 0;
+                opacity: 1
+            }
+        }
+    
 
 .close-button {
+    background-color: #fff;
     cursor: pointer;
     position: absolute;
-    box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2),
-            0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, 0.12);
-        border-radius: 50%;
-
-
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    margin-top: 8px;
+    margin-left: 490px;
 
 }
 
 .is-hidden {
     visibility: hidden;
+    opacity: 0.2;
+    pointer-events: auto;
 }
