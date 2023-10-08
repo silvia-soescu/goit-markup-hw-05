@@ -126,14 +126,14 @@ body h2 {
 .contact-email:hover a {
     color: var(--visited-link-color);
     fill: var(--visited-link-color);
-    transition: color var(--transition);
+    transition: color var(--transition), fill var(--transition);
 }
 
 .contact-number:hover svg,
 .contact-number:hover a {
     color: var(--visited-link-color);
         fill: var(--visited-link-color);
-        transition: color var(--transition);
+        transition: color var(--transition), fill var(--transition);
     }
 
 .header-logo span {
@@ -404,7 +404,7 @@ margin: 0 auto;
     background-color: #188CE8;
     padding: 10px;
     border-radius: 50%;
-    transition: background-color var(--transition),
+    transition: fill var(--transition), background-color var(--transition),
         color var(--transition);
 }
 
@@ -442,11 +442,9 @@ padding-top: 94px;
 .customer-item:hover svg {
     fill: var(--visited-link-color);
     border: 1px solid var(--visited-link-color);
-    transition: background-color var(--transition),
-        color var(--transition);
+    transition: fill var(--transition), border var(--transition);
 }
 /* footer styles */
-
 .global-footer {
     background-color: var(--background-color);
     width: 1600px;
@@ -495,7 +493,7 @@ padding-top: 94px;
 
 .footer-address a:hover {
     color: var(--visited-link-color);
-    transition: background-color var(--transition),
+    transition: fill var(--transition), background-color var(--transition),
         color var(--transition);
 }
 
@@ -712,38 +710,16 @@ position: absolute;
 
 .modal {
     position: fixed;
+    z-index: 1;
     width: 100vw;
     height: 100vh;
     top: 0;
     left: 0;
     background-color:rgba(0, 0, 0, 0.2);
     display: flex;
-        justify-content: center;
-        align-items: center;
+    justify-content: center;
+    align-items: center;
 }
-
-.modal-content {
-    background-color: #fff;
-    color: #fff;
-    width: 528px;
-    height: 581px;
-    border-radius: 4px;
-    animation-name: animatetop;
-    animation-duration: 1s;
-    }
-
-        @keyframes animatetop {
-            from {
-                top: -100px;
-                opacity: 0
-            }
-    
-            to {
-                top: 0;
-                opacity: 1
-            }
-        }
-    
 
 .close-button {
     background-color: #fff;
@@ -754,10 +730,45 @@ position: absolute;
     margin-top: 8px;
     margin-left: 490px;
 
+
 }
+
+.close-button:hover,
+.close-button:focus {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
 
 .is-hidden {
     visibility: hidden;
-    opacity: 0.2;
-    pointer-events: auto;
+    opacity: 0.8;
+    pointer-events: none;
 }
+
+ .modal-content {
+     background-color: #fff;
+     color: #fff;
+     width: 528px;
+     height: 581px;
+     border-radius: 4px;
+    animation: animatemodal 3000ms infinite 1000ms;
+ }
+
+
+ @keyframes animatemodal {
+    0% {
+            transform: scale(1);
+        }
+    
+    50% {
+            transform: scale(1.25);
+        }
+    
+    100% {
+            transform: scale(1);
+        }
+    }
