@@ -581,6 +581,9 @@ padding-top: 94px;
     padding: 6px 22px;
     border: var(--buttons-color);
     border-radius: 4px;
+    font-family: font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .portofolio-buttons button:link,
@@ -657,11 +660,13 @@ position: absolute;
     opacity: 0.9;
     background-color: var(--visited-link-color);
     transform: translatey(100%);
-        transition: transform 250ms ease-in-out;
+    transition: transform 500ms ease-in-out;
 }
 
 .portofolio-parent:hover .card-transition {
     transform: translateY(0);
+    transition: transform 500ms ease-in-out;
+
 }
 
 .card-transition p {
@@ -745,7 +750,7 @@ position: absolute;
 
 .is-hidden {
     visibility: hidden;
-    opacity: 0.8;
+    opacity: 0;
     pointer-events: none;
 }
 
