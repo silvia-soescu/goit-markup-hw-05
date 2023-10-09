@@ -760,17 +760,13 @@ position: absolute;
      width: 528px;
      height: 581px;
      border-radius: 4px;
-    animation: animatemodal 3000ms infinite 1000ms;
+    animation: animatemodal 3000ms 1000ms;
  }
 
 
  @keyframes animatemodal {
     0% {
-            transform: scale(1);
-        }
-    
-    50% {
-            transform: scale(1.25);
+            transform: scale(0.80);
         }
     
     100% {
